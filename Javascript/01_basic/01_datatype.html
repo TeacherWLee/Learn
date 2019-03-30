@@ -1,0 +1,103 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        // ========================================================================
+        // -------- 预备知识 --------
+        // ---- 理论：注释 ----
+        // 单行注释
+        /* 多行注释 */
+
+
+        // ---- 理论：控制台打印 ----
+        // console.log()    在控制台打印
+        // ---- 练习：控制台打印 ----
+        // console.log("Console log practice.");
+
+
+
+        // ========================================================================
+        // -------- 变量 --------
+        // ---- 理论：定义变量 ----
+        // 使用关键字‘var’
+        // ---- 实践：定义变量 ----
+        var name = "liwei";     // 定义变量
+        var age = 30;
+
+
+
+        // ========================================================================
+        // -------- 数据类型 --------
+        // ---- 原理：ECMAScript（Javascript）数据类型 ----
+        // 简单值：Undefined, Null, Boolean, Number, String
+        // 复杂数据类型：Object
+        // 函数对象：Function
+
+        // ---- 理论：typeof 检测变量类型 ----
+        // 用法：(1) typeof var_value; (2) typeof(var_value)
+        // ---- 练习：typeof ----
+        var v = "a string value";
+        // console.log("The type of variable value \"v\" is: " + typeof(v));
+
+
+        // ---- 理论：undefined类型 ----
+        // 没有初始化的变量类型是undefined，值是undefined
+        // undefined类型只有一个值：undefined
+        // 一般，不显示指定undefined值
+        // ---- 实践：undefined ----
+        var undefined_value;
+        // console.log("Undefined value type is: " + typeof(undefined_value));
+
+
+        // ---- 理论：Null ----
+        // 表示一个空对象指针，类型是object，值是null
+        // undefined值 派生自 null值，undefined==true返回true
+        // ---- 实践：Null ----
+        var null_value = null;
+        // console.log("Null value is: " + null_value);
+
+
+        // ---- 理论：Number类型 ----
+        // 表示数字，包括整型和浮点型
+        // NaN：Not a Number，非数值，一个特殊的数值.
+        // NaN 任何数值运算返回值都是 NaN
+        // NaN与任何值都不相等（包括NaN）
+        // isNaN(n)方法，检测是否是非数值
+        // ---- 实践：Number ----
+        // console.log("0's data type is " + typeof(0));
+        // console.log("0.1's data type is " + typeof(0));
+        // console.log(0-"a");     // NaN
+        // console.log(isNaN(0-"a"));
+
+
+        // ---- 理论：数值转换 ----
+        // Number(), parseInt(), parseFloat()
+        // ---- 实践：数值转换 ----
+        // console.log(typeof(Number("16")));
+        // console.log(parseInt("28px")-10);
+        // console.log(parseFloat("5.98kg"));
+
+
+        // ---- 理论：字符串 ----
+        // 双引号或单引号定义字符串
+        // console.log('this is a string.');
+
+
+        // ---- 理论：字符串转换 ----
+        // toString(), String()
+        var aNum = 100;
+        // console.log(typeof(aNum.toString()));
+        // console.log(typeof(String(102)));
+
+
+        // ---- 理论：boolean类型 ----
+        // true, false
+        console.log(typeof(true));
+    </script>
+</body>
+
+</html>
