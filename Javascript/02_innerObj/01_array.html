@@ -1,0 +1,82 @@
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        // =================================================
+        // -------- 数组 array --------
+        // ---- 定义数组 ----
+        // Array(), []
+        var colors1 = new Array();
+        var colors2 = new Array(7);
+        var colors3 = new Array("red", "orange", "yellow", "green", "cyan", "blue", "purple");
+        var colors4 = ["red", "orange", "yellow", "green", "cyan", "blue", "purple"];
+        var multi = ["string", 1, true, {"email": "liw@sicnu.edu.cn"}];
+        console.log(multi);
+
+        var color = colors3[1];     // 访问元素
+
+        // ---- length ----
+        var arr = ['a', 'b', 'c', 'd'];
+        console.log(arr.length);
+
+        // ---- 常用方法：增删 ----
+        // push pop shift unshift
+        var colors5 = ["red", "orange", "yellow"];
+        colors5.push("green", "cyan", "blue", "purple");    // push 数组末尾添加
+        console.log(colors5);
+
+        var colors6 = ["green", "cyan", "blue", "purple"];
+        colors6.unshift("red", "orange", "yellow");         // unshift 数组前端添加
+        console.log(colors6);
+
+        console.log(colors6.pop());      // 弹出末尾元素
+        console.log(colors6.shift());       // 弹出第一个元素
+        console.log(colors6);
+
+
+        // ---- 常用方法：转换与排序 ----
+        // join 将数组所有元素放入字符串
+        console.log(colors6.join("-"));
+
+        // reverse 倒序重拍数组元素
+        console.log(colors6.reverse());
+
+        // sort 数组元素排序
+        var numbers = [1, 3, 2, 6, 5, 4];
+        console.log(numbers.sort());
+
+        // concat 连接多个数组
+        var nums1 = [1, 2, 3];
+        var nums2 = [4, 5];
+        var nums3 = [6, 7, 8, 9];
+        console.log(nums1.concat(nums2, nums3));
+
+        // slice 获取数组元素片段
+        var colorSlice = colors5.slice(1, 3);
+        console.log(colorSlice);
+
+        // splice 
+        var nums4 = [1, 2, 3, 4, 5];
+        var delNums1 = nums4.splice(1, 2);      // 删除元素，从index开始，count个
+        console.log(delNums1);
+        console.log(nums4);
+
+        delNums1 = nums4.splice(1, 0, 9, 8, 7);            // 插入元素
+        console.log(delNums1);
+        console.log(nums4);
+
+        delNums1 = nums4.splice(1, 2, 'n1', 'n2');
+        console.log(delNums1);
+        console.log(nums4);
+
+        // indexOf 查找
+        var index = nums4.indexOf('n1', 1);
+        console.log(index);
+        index = nums4.lastIndexOf('n2');
+        console.log(index);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function print(v) {
+            document.write(v);
+            document.write('<br>');
+        }
+    </script>
+    <script>
+        // ============================================
+        // -------- string 方法 --------
+        // charAt, charCodeAt
+        var s1 = "abcdefghijklmn";
+        print(s1[1]);
+        print(s1.charAt(1));
+        print(s1.charCodeAt(1));
+
+
+        // indexOf 检索子字符串
+        print(s1.indexOf("fgh"));
+        print(s1.lastIndexOf("k"));
+
+
+        // slice substring截取字符串
+        print(s1.slice(4, 7));
+        print(s1.substring(4, 7));
+        print(s1.substr(4, 3));
+
+
+        // split 分割字符串成数组
+        var s2 = "red, yellow, blue";
+        print(s2.split(", "));
+
+        // replace 替换字符，支持正则表达式
+        var s3 = "red-yellow-blue";
+        print(s3.replace("-", ", "));
+
+        // toUpperCase, toLowerCase
+        var s4 = "Hello World"
+        print(s4.toUpperCase());
+        print(s4.toLowerCase());
+    </script>
+</body>
+</html>

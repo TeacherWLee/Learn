@@ -1,0 +1,29 @@
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        // =============================================================
+        // -------- 函数 --------
+        // ---- 函数定义与调用 ----
+        // 关键字 function 定义函数
+        // function addNum(num1, num2) {
+        //     return num1 + num2;
+        // }
+        // r = addNum(1, 2);
+        // console.log(r);
+
+        // ---- arguments ----
+        function sumNum() {
+            var sum = 0;
+            for (var i=0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        r = sumNum(1, 2, 3);
+        document.write(r);
+    </script>
+</body>
+</html>
