@@ -1,0 +1,80 @@
+<html>
+<head>
+
+</head>
+<body>
+    <div class="box" id="box">
+        元素
+    </div>
+    <ul id="list1">
+        <li>前端开发</li>
+        <li>服务器端开发</li>
+        <li>UI设计</li>
+    </ul>
+    <ol id="list2" class="on">
+        <li>javascript原生</li>
+        <li>javascript框架</li>
+    </ol>
+    <p id="text" align="center" data-type="title">段落文本</p>
+
+    <style>
+        .on {border-bottom: 1px solid #0F0;}
+        .current{
+            background: #CCC;
+            color: #F00;
+        }
+    </style>
+
+    <script>
+        // -------- 获取元素 --------
+        // 获取id=“box”的元素
+        var box = document.getElementById("box");
+        // console.log(box);
+        // 获取页面中所有的li元素
+        var listLi = document.getElementsByTagName("li");
+        // console.log(listLi);
+        // 获取id=“list1”下的所有li元素
+        var listLi2 = document.getElementById("list1").getElementsByTagName("li");
+        // console.log(listLi2);
+
+
+        // -------- 修改样式 --------
+        var box2 = document.getElementById("box");
+        box2.style.color = "#F00";          // 修改颜色为红色
+        box2.style.fontWeight = "bold";     // 修改为加粗，属性修改为驼峰形式
+        
+        var listLi3 = document.getElementById("list1").getElementsByTagName("li");
+        for (var i = 0; i < listLi3.length; i++) {
+            listLi3[i].style.color = "#00F";
+        }
+
+
+        // -------- innerHTML --------
+        // 获取或设置元素开始标签和结束标签之间的内容
+        var listLi4 = document.getElementById("list1").getElementsByTagName("li");
+        for (var i = 0; i < listLi4.length; i++) {
+            listLi4[i].innerHTML = listLi4[i].innerHTML + "培训";
+        }
+
+        // -------- className --------
+        // 获取或设置元素class属性值
+        console.log(document.getElementById("list2").className);
+        var listLi5 = document.getElementById("list2").getElementsByTagName("li");
+        for (var i = 0; i < listLi5.length; i++) {
+            listLi5[i].className = "current";
+        }
+
+
+        // --------获取与设置属性 --------
+        var p = document.getElementById("text");
+        console.log(p.id);
+        console.log(p.getAttribute("data-type"));   // 获取属性
+        p.setAttribute("data-color", "red");    // 设置属性
+        p.removeAttribute("align");             // 删除属性
+
+
+
+
+    </script>
+</body>
+</html>
