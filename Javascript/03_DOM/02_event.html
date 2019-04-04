@@ -1,8 +1,52 @@
 <html>
 <head>
-
+    <style>
+        .btn {
+            width: 140px;
+            height: 30px;
+            line-height: 30px;
+            background: #00F;
+            color: #FFF;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+    <input type="button" value="弹出" onclick="alert('I am a button')">
+    <div class="btn" onmouseover="mouseoverFn(this)" 
+    onmouseout="mouseoutFn(this)">HTML事件</div>
+    <script>
+        function mouseoverFn(btn) {
+            btn.style.background = "#F00";
+        }
+        function mouseoutFn(btn) {
+            btn.style.background = "#00F";
+        }
+    </script>
+
+    <div id="btn" class="btn">DOM0级事件</div>
+    <script>
+        var btnDom0 = document.getElementById("btn");
+        btnDom0.onmouseover = function() {
+            this.style.background = "#F00";
+        }
+
+        btnDom0.onmouseout = function() {
+            this.style.background = "#00F";
+        }
+
+        function clickBtn() {
+            alert("DOM0 Button Clicked.");
+        }
+
+        btnDom0.onclick = clickBtn;
+
+        // TODO: learn other event
+
+    </script>
 </body>
 </html>
