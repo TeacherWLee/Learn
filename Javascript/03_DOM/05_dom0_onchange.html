@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        function init() {
+            var menu = document.getElementById("menu");
+
+            // 绑定change事件，域内容发生改变后出发，一般用于select、checkbox、radio
+            menu.onchange = function() {
+                // 获取当前选中的值
+                // var bgcolor = menu.options[menu.selectedIndex].value;
+                var bgcolor = this.value;
+                
+                if (bgcolor == "") {
+                    bgcolor = "#FFF";
+                }
+
+                document.body.style.backgroundColor = bgcolor;
+            }
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+    <div class="box">
+        请选择您喜欢的背景颜色：
+        <select name="" id="menu">
+            <option value="">请选择</option>
+            <option value="#F00">红色</option>
+            <option value="#0F0">绿色</option>
+            <option value="#00F">蓝色</option>
+            <option value="#FF0">黄色</option>
+            <option value="#CCC">灰色</option>
+        </select>
+    </div>
+</body>
+</html>

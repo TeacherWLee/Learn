@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: #F00;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">拖动</div>
+
+    <script>
+        var box = document.getElementById("box");
+
+        box.onmousedown = function() {
+            console.log("mouse down");
+        }
+
+        box.onmouseup = function() {
+            console.log("mouse up");
+        }
+
+        box.onclick = function() {
+            console.log("mouse click");
+        }
+
+        box.onmousemove = function() {
+            console.log("mouse move");
+        }
+
+        // 窗口大小调整
+        window.onresize = function() {
+            console.log("window resize");
+        }
+    </script>
+</body>
+</html>

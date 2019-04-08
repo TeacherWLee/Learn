@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 50px;
+        }
+        .left, .tip {
+            float: left;
+        }
+        .left {
+            margin-left: 10px;
+        }
+        .tip {
+            margin-left: 10px;
+            display: none;
+            font-size: 12px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // 获取文本框
+            var phone = document.getElementById("phone");
+            // 获取提示框
+            var tip = document.getElementById("tip");
+
+            // 文本框绑定激活事件 onfocus事件：当获得焦点时事件 onblur 失去焦点事件
+            phone.onfocus = function() {
+                tip.style.display = "block";
+            }
+
+            phone.onblur = function() {
+                tip.innerHTML = this.value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <input type="text" id="phone" placeholder="请输入手机号码">
+        </div>
+        <div class="tip" id="tip">
+            请输入有效的手机号码
+        </div>
+    </div>
+</body>
+</html>

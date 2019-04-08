@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <Script>
+        // onload 页面结构和数据加载完成后事件
+        // unload 页面卸载事件
+        window.onload = function() {
+            var box = document.getElementById("box");
+            function clicked() {
+                alert("我被点击了");
+            }
+            box.onclick = clicked;
+        }
+        
+    </Script>
+</head>
+<body>
+    <div id="box">这是一个DIV</div>
+</body>
+</html>
