@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueMeiTaun-C2.3-TodoList</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="inputValue">
+    <button v-on:click="handleBtnClick">提交</button>
+    <ul>
+        <todo-item v-bind:content="item" v-for="item in list"></todo-item>
+    </ul>
+</div>
+
+<script>
+    // 全局组件用法
+    // Vue.component('TodoItem', {
+    //     props: ['content'],
+    //     template: '<li>{{ content }}</li>'
+    // })
+
+    // 局部组件用法
+    var TodoItem = {
+        props: ['content'],
+        template: '<li>{{ content }}</li>'
+    }
+
+    var app = new Vue({
+        el: '#app',
+        components: {
+            TodoItem: TodoItem
+        },
+        data: {
+            list: [],
+            inputValue: ''
+        },
+        methods: {
+            handleBtnClick: function() {
+                this.list.push(this.inputValue)
+                this.inputValue = ''
+            }
+        }
+    })
+</script>
+</body>
+</html>
