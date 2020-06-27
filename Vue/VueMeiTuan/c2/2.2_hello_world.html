@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueMeiTaun-C2.2-HelloWorld</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+    <div di="normal">正常的DIV</div>
+    <div id="j"></div>
+    <div id="v">{{ content }}</div>
+
+    <script>
+        // 传统的JS写法
+        var j = document.getElementById('j')
+        j.innerHTML = '使用JS控制的DIV'
+        setTimeout(function() {
+            j.innerHTML = '使用JS控制的DIV，2s后换更内容'
+        }, 2000)
+
+
+        // 相应的Vue.js写法
+        var app = new Vue({
+            el: '#v',
+            data: {
+                content: '使用VUE控制的DIV'
+            }
+        })
+
+        setTimeout(function() {
+            app.$data.content = '使用VUE控制的DIV，2s后换更内容'
+        }, 2000)
+
+    </script>
+</body>
+</html>
