@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="3rd/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="click1">Click</button>
+</div>
+
+
+<script>
+var app = new Vue({
+    el: '#app',
+    methods: {
+        click1: function () {
+            alert('OK');
+        }
+    }
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C3.4-计算属性、方法与侦听器</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{ fullName }} <br>
+    {{ descript() }} <br>
+    {{ sayHello }}
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Wei',
+            lastName: 'Li',
+            sayHello: 'Hi Wei'
+        },
+        computed: {     // 计算属性
+            fullName: {
+                get: function () {
+                    return this.firstName + ' ' + this.lastName
+                },
+                set: function (value) {
+                    var arr = value.split(' ')
+                    this.firstName = arr[0]
+                    this.lastName = arr[1]
+                }
+            }
+        },
+        methods: {
+            descript: function () {     // 自定义方法
+                return 'My name is ' + this.fullName
+            }
+        },
+        watch: {
+            firstName: function () {
+                this.sayHello = 'Hi ' + this.firstName
+            }
+        }
+    })
+</script>
+</body>
+</html>

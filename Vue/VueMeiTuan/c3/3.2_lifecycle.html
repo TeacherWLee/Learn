@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C3.2-LifeCycle</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+    <div id="app">Hello World</div>
+
+    <script>
+        // 生命周期函数就是vue实例在某一个时间点会自动执行的函数
+        var vm = new Vue({
+            el: '#app',
+            template: '<div>Hello World</div>',
+            beforeCreate: function () {
+                console.log('beforeCreate Called')
+            },
+            created: function () {
+                console.log('created Called')
+            },
+            beforeMount: function () {
+                console.log(this.$el)
+                console.log('beforeMount Called')
+            },
+            mounted: function () {
+                console.log(this.$el)
+                console.log('Mounted Called')
+            },
+            beforeUpdate: function () {
+                console.log('beforeUpdate Called')
+            },
+            updated: function () {
+                console.log('updated Called')
+            },
+            beforeDestroy: function () {
+                console.log('beforeDestroy Called')
+            },
+            destroyed: function () {
+                console.log('destroyed Call')
+            }
+
+        })
+    </script>
+</body>
+</html>
