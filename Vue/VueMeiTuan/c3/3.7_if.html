@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C3.6-样式绑定</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-if="show">v-if 指令</div>
+    <div v-else-if="true">v-else-if 指令</div>
+    <div v-else>v-else 指令</div>
+    <div v-show="show">v-show 指定</div>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    })
+</script>
+</body>
+</html>

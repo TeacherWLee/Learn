@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C3.6-样式绑定</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <table>
+        <tbody>
+            <tr is="row"></tr>
+            <tr is="row"></tr>
+            <tr is="row"></tr>
+        </tbody>
+    </table>
+
+    <div @click="handleClick"
+         ref="hello"
+    >
+        hello world
+    </div>
+    <div>
+        <counter ref="c1" @change="handleChange"></counter>
+        <counter ref="c2" @change="handleChange"></counter>
+        <div>total: {{ total }}</div>
+    </div>
+</div>
+
+<script>
+    Vue.component("row", {
+        data: function () {
+            return {
+                content: "this is a row"
+            }
+        },
+        template: "<tr><td>{{ content }}</td></tr>"
+    })
+    Vue.component("counter", {
+        template: "<div @click='handleCounter'>Counter: {{ number }}</div>",
+        data: function () {
+            return {
+                number: 0
+            }
+        },
+        methods: {
+            handleCounter: function () {
+                this.number++
+                this.$emit("change")
+            }
+        }
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            total: 0
+        },
+        methods: {
+            handleClick: function () {
+               alert(this.$refs.hello.innerHTML)
+            },
+            handleChange: function () {
+                this.total = this.$refs.c1.number + this.$refs.c2.number
+            }
+        }
+    })
+</script>
+</body>
+</html>

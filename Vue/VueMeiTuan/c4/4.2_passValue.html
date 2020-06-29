@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C4.2-父子组件数据传递</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <counter :step="step" name="c1" @change="handleCounterChange"></counter>
+    <counter :step="step" name="c2" @change="handleCounterChange"></counter>
+    <div>total: {{ total }}</div>
+</div>
+
+<script>
+    var counter = {
+        props: ["step", "name"],
+        template: "<div v-on:click='handleClickCounter'>counter {{ name }}: {{ count }}</div>",
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        methods: {
+            handleClickCounter: function () {
+                this.count += this.step
+                this.$emit("change", this.count, this.name)
+            }
+        }
+    }
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            step: 2,
+            count1: 0,
+            count2: 0
+        },
+        computed: {
+            total: function () {
+                return this.count1 + this.count2
+            }
+        },
+        methods: {
+            handleCounterChange: function (count, name) {
+                if (name === "c1") {
+                    this.count1 = count
+                } else {
+                    this.count2 = count
+                }
+            }
+        },
+        components: {
+            counter: counter
+        }
+    })
+</script>
+</body>
+</html>

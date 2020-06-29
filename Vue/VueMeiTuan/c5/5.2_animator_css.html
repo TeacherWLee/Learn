@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C5.2-animate.css</title>
+    <script src="../3rd/vue.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+</head>
+<body>
+<div id="app">
+    <transition name="fade" enter-active-class="animate__flip" leave-active-class="animate__fadeIn">
+        <div v-if="show">Hello World</div>
+    </transition>
+
+    <button @click="handleClick">切换</button>
+</div>
+
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            show: true
+        },
+        methods: {
+            handleClick: function () {
+                this.show = !this.show
+            }
+        }
+    })
+</script>
+</body>
+</html>

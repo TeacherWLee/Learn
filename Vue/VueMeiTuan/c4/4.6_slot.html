@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C4.5-Bus总线/观察者模式</title>
+    <script src="../3rd/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <body-content>
+        <div class="header" slot="header">header</div>
+        <div class="footer" slot="footer">footer</div>
+    </body-content>
+</div>
+
+<script>
+    Vue.component('body-content', {
+        template:
+            `<div>
+                <slot name='header'></slot>
+                <div class='content'>main-content</div>
+                <slot name='footer'></slot>
+                <slot name='copyright'>copyright liwei</slot>
+            </div>`
+    })
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+
+        }
+    })
+</script>
+</body>
+</html>

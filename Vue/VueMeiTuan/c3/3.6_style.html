@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueMeiTaun-C3.6-样式绑定</title>
+    <script src="../3rd/vue.js"></script>
+    <style>
+        .activated {
+            color: red
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div @click="handleDivClick1"
+         :class="{ activated: isActivaved }"
+    >
+        Class的对象绑定
+    </div>
+    <div @click="handleDivClick2"
+         :class="[activated2]"
+    >
+        Class的数组绑定
+    </div>
+    <div @click="handleDivClick3"
+         :style="styleObj"
+    >
+        内联Style的对象绑定
+    </div>
+    <div @click="handleDivClick3"
+         :style="[styleObj, {fontSize: '20px'}]"
+    >
+        内联Style的数组绑定
+    </div>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            isActivaved: false,
+            activated2: '',
+            styleObj: {
+                color: "black"
+            }
+        },
+        methods: {
+            handleDivClick1: function () {
+                this.isActivaved = !this.isActivaved
+            },
+            handleDivClick2: function () {
+                this.activated2 = this.activated2 === '' ? 'activated' : ''
+            },
+            handleDivClick3: function () {
+                this.styleObj.color = this.styleObj.color === 'black' ? 'red' : 'black'
+            }
+        }
+    })
+</script>
+</body>
+</html>
